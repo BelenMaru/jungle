@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
+     if user = User.authenticate_with_credentials(params[:email], params[:password])
 
     # If the user exists AND the password entered is correct.
     if user && user.authenticate(params[:password])
