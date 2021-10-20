@@ -25,6 +25,4 @@ RSpec.feature "ProductDetails", type: :feature, js:true do
     expect(page).to have_css '.product-detail', count: 1
     save_screenshot "product_details.png"
   end
-
-
 end
