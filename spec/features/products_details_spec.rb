@@ -3,7 +3,7 @@ require 'support/database_cleaner'
 
 RSpec.feature "ProductDetails", type: :feature, js:true do
   before :each do
-    @category = Category.create! name: 'Apparel'
+    @category = Category.create! name: 'Apparel_'
 
     10.times do |n|
       @category.products.create!(
@@ -22,7 +22,7 @@ RSpec.feature "ProductDetails", type: :feature, js:true do
 
     # DEBUG / VERIFY
     expect(page).to have_text 'Description', count: 1
-    expect(page).to have_css '.product-detail', count: 1
+    expect(page).to have_csss '.product-detail', count: 1
     save_screenshot "product_details.png"
   end
 end
